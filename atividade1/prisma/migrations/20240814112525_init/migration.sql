@@ -20,8 +20,8 @@ CREATE TABLE `User` (
     `role` ENUM('USER', 'ADMIN') NOT NULL DEFAULT 'USER',
     `email` VARCHAR(50) NOT NULL,
     `password` VARCHAR(50) NOT NULL,
-    `birth` DATETIME(3) NOT NULL,
-    `created_at` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP(3),
+    `birth` DATE NOT NULL,
+    `created_at` DATETIME(3) NOT NULL DEFAULT CURRENT_TIMESTAMP(3),
 
     UNIQUE INDEX `User_username_key`(`username`),
     UNIQUE INDEX `User_email_key`(`email`),
@@ -36,7 +36,7 @@ CREATE TABLE `Product` (
     `price` DECIMAL(6, 2) NOT NULL,
     `storage` SMALLINT NOT NULL DEFAULT 0,
     `avaliation` DECIMAL(3, 2) NOT NULL,
-    `registration_data` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP(3),
+    `registration_data` DATETIME(3) NOT NULL DEFAULT CURRENT_TIMESTAMP(3),
 
     PRIMARY KEY (`id`)
 ) DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
